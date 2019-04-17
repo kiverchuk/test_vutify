@@ -47,8 +47,8 @@
             href : "/Output"
         },
         { 
-            title: 'Result',
-            href : "/Result"
+            title: 'students',
+            href : "/students"
         }
       ]
     })

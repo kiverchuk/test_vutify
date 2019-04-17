@@ -3,36 +3,41 @@ import Vue from 'vue'
 Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
-    x : 2,
-    y : 3
+    x : 0,
+    y : 0,
+    students : []
   },
   mutations: {   
     setX (state, x) {
-      console.log("set x" + x)
         state.x = x
     },
     setY (state, y) {       
         state.y = y
+    },
+    setStud(state, stud){
+      state.students = stud
     }
   },
   getters: {
     getX (state) {
-      console.log("get x")
       return state.x
     },
     getY (state) {
         return state.y
-    }
-   
+    },
+   getStud(state){
+     return state.students
+   }
   },
   actions: {
     fetchData (context) {
-      fetch('http://localhost:3004/data')
+      fetch('http://localhost:3005/students')
         .then(response => {
           return response.json()
         })
         .then(data => {
-          //data work
+          //console.log(data)
+          context.commit('setStud', data)
         })
     }
   }
