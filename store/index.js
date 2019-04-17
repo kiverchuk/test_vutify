@@ -3,11 +3,12 @@ import Vue from 'vue'
 Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
-    x : 0,
-    y : 0
+    x : 2,
+    y : 3
   },
   mutations: {   
     setX (state, x) {
+      console.log("set x" + x)
         state.x = x
     },
     setY (state, y) {       
@@ -16,6 +17,7 @@ const store = new Vuex.Store({
   },
   getters: {
     getX (state) {
+      console.log("get x")
       return state.x
     },
     getY (state) {

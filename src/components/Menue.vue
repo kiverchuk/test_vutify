@@ -17,7 +17,7 @@
               </template>
   
               <v-list>
-                <v-list-tile v-for="(item, i) in items" :key="i" v-onclick="" >
+                <v-list-tile v-for="(item, i) in items" :key="i" >
                     <router-link :to="item.href">
                   <v-list-tile-title >{{ item.title }}</v-list-tile-title>
                     </router-link>
